@@ -16,6 +16,10 @@ int string_matching(char *src,char *target){
  int point_target = 0;
  
  while(point_src < length_src){
+ 	
+      if( (length_src - point_src) < length_target){
+	  return -1;
+      }
  
       while(point_target < length_target){
           if(src[point_src] == target[point_target]){
@@ -34,10 +38,12 @@ int string_matching(char *src,char *target){
                 break;    
           }
       }
+      
       if(point_target == length_target){
            int index = point_src - length_target;
            return index;
       }
+      
       point_target = 0;       
       point_src++;        
  }

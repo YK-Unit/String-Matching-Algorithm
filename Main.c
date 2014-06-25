@@ -3,8 +3,13 @@
 #include "StringMatching.h"
 
 int main(void) {
-    char *src = "0123456789a1adadc3dad3e4efg";
-    char *target = "adc3";
+//----- Test One ----//
+    //char *src = "0123456789a1adadc3dad3e4efg";
+    //char *target = "adc3";
+    
+//---- Test Two ----//
+    char *src = "ababqweababqwababaqweabababbbaa";
+    char *target = "ababb";
     
     int index = string_matching(src,target);
     

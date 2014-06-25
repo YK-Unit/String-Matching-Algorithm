@@ -12,8 +12,8 @@ int string_matching(char *src,char *target){
          return -1;             
      }
      
-     size_t point_src = 0;
-     size_t point_target = 0;
+     int point_src = 0;
+     int point_target = 0;
      
      while(point_src < length_src){
           while(point_target < length_target){
@@ -21,14 +21,20 @@ int string_matching(char *src,char *target){
                     point_target++; 
                     point_src++;                       
               }else{
-                    if(src[point_src] == target[0]){
-                         point_src--;                         
-                    }  
+			  		int point_temp = point_src - point_target+1;
+			  		for(point_temp ; point_temp <= point_src; point_temp++){
+		   	             if(src[point_temp] == target[0]){
+							 point_src = point_temp;  
+							 point_src--;
+							 break;                      
+                    	 }		   				   
+				   }
+  				    
                     break;    
               }
           }
           if(point_target == length_target){
-               size_t index = point_src - length_target;
+               int index = point_src - length_target;
                return index;
           }
           point_target = 0;       

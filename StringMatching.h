@@ -26,14 +26,14 @@ int string_matching(char *src,char *target){
                 point_target++; 
                 point_src++;                       
           }else{
-		  		int point_temp = point_src - point_target+1;
-		  		for(point_temp ; point_temp <= point_src; point_temp++){
-	   	             if(src[point_temp] == target[0]){
-						 point_src = point_temp;  
-						 point_src--;
-						 break;                      
+		int point_temp = point_src - point_target+1;
+		for(point_temp ; point_temp <= point_src; point_temp++){
+	   		if(src[point_temp] == target[0]){
+				point_src = point_temp;  
+				point_src--;
+				break;                      
                 	 }		   				   
-			   }
+		}
 			    
                 break;    
           }
